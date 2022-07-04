@@ -14,7 +14,7 @@ section {
 }
 
 .section-inner {
-	max-width: 1560px;
+	max-width: 1600px;
 	padding: 0 20px;
 	width: 100%;
 	margin: auto;
@@ -39,9 +39,7 @@ section {
     	padding-right: 25px;
 	}
 
-	&.white {
-		color: #fff;
-	}
+	
 	img {
 		max-width: 100%;
 	}
@@ -100,19 +98,19 @@ section {
 }
 .section-subtitle {
 	@include f-r;
-	font-size: 18px;
-	color: #252A39;
-	text-align: center;
-	margin-top: 10px;
-	@media only screen and (max-width : $tw) {
-		font-size: 18px;
-	}
-	@media only screen and (max-width : $mw) {
-		font-size: 16px;
-	}
+	font-size: 17px;
+	color: #000;
 }
 
+.title-regular {
+	@include f-r;
+	font-size: 36px;
+	color: #000;
+}
 
+.white {
+	color: #fff;
+}
 .loading:after {
 	display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;

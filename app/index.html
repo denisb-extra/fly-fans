@@ -127,11 +127,44 @@
 	<section class="visual-3d">
 		<div class="section-inner">
 			<p class="section-title white centered">מאווררים Custome Made</p>
-			<div class="container-3d" id="container-3d"></div>
-			<div class="buttons">
-				<div class="button" id="texture-wood">Wood</div>
-				<div class="button" id="texture-metal">Metal</div>
+			<div class="section-subtitle centered white">בעמודי המוצר באתר תוכלו לבחור להתאים את מאוור התקרה שלכם בהתאם לעיצוב שתרצו וכן בהתאם לצרכים הייעודיים שלכם</div>
+			<div class="wrapper">
+				<div class="part advantages">
+					<p class="title-regular white">החוזקות שלנו</p>
+					<div class="items">
+						<div class="item">טכנולוגיה גבוהה</div>
+						<div class="item">עיצוב ייחודי והתאמה אישית</div>
+						<div class="item">איכות חסרת פשרות</div>
+						<div class="item">אחריות ואמינות</div>
+						<div class="item">יוקרה</div>
+					</div>
+				</div>
+				<div class="part visual">
+					<div class="container-3d" id="container-3d"></div>
+				</div>
+				<div class="part selectors">
+					<div class="selector">
+						<p class="title">בחר צבע גוף:</p>
+						<div class="buttons">
+							<div class="button" material="white" target="body" style="background-color: #fff;"></div>
+							<div class="button" material="black" target="body" style="background-color: #000;"></div>
+							<div class="button" material="metal" target="body" style="background-color: #A09C9D;"></div>
+						</div>
+					</div>
+
+					<div class="selector">
+						<p class="title">בחר צבע להבים:</p>
+						<div class="buttons">
+							<div class="button" material="white" target="blades" style="background-color: #fff;"></div>
+							<div class="button" material="black" target="blades" style="background-color: #000;"></div>
+							<div class="button" material="wood" target="blades" style="background-color: #A28966;"></div>
+						</div>
+					</div>
+				</div>
 			</div>
+			
+
+			<div class="btn-more">התחל בקניה</div>
 		</div>
 	</section>
 
@@ -259,45 +292,54 @@
 		import { GUI } from './plugins/threejs/jsm/libs/lil-gui.module.min.js';
 
 		let camera, scene, renderer, controls;
-
+		let light1, light2, light3, light4;
+		const clock = new THREE.Clock();
 		let object_blades, object_fan_base;
+		let objects = [];
 
+		
+
+		let materials = [];
 		let wood_tex = new THREE.TextureLoader().load('3d/models/fan/textures/21246a8b4c20.jpg');
-		let wood_mat = new THREE.MeshBasicMaterial({
-			map: wood_tex,
-			roughness: 0.5,
-    		metalness: 1,
-		}); 
-
-		let env_tex = new THREE.TextureLoader().load('3d/models/fan/textures/HDM_06_001_rim_ref.jpg');
 		let metal_tex = new THREE.TextureLoader().load('3d/models/fan/textures/d2e611dca1c6.jpg');
-		let metal_mat = new THREE.MeshBasicMaterial({
-			map: metal_tex
+		materials['wood'] = new THREE.MeshBasicMaterial({
+			map: wood_tex,
+		}); 
+		materials['metal'] = new THREE.MeshBasicMaterial({
+			map: metal_tex,
 		}); 
 
-		
+		materials['white'] = new THREE.MeshBasicMaterial({
+			color: 0xffffff
+		}); 
+		materials['black'] = new THREE.MeshBasicMaterial({
+			color: 0x000000
+		}); 
 
+		$(".selectors .button").on("click", function() {
+			let container = $(this).closest(".buttons");
+			$(".button", container).removeClass("active");
+			$(this).addClass("active");
+			let target = $(this).attr('target');
+			let material = $(this).attr('material');
 
-		
-		document.getElementById('texture-wood').addEventListener("click", function(){
-			object_blades.traverse(function(child) {
-				if (child instanceof THREE.Mesh){
-					child.material = wood_mat;
-				}
-				object_blades.geometry.uvsNeedUpdate = true;
-				object_blades.needsUpdate=true;
-			});
+			setMaterial(target, material);
 		});
 
-		document.getElementById('texture-metal').addEventListener("click", function(){
-			object_fan_base.traverse(function(child) {
+		
+		function setMaterial(target, material) {
+			let object = objects[target];
+			let mat = materials[material];
+			console.log(object)
+			console.log(mat)
+			object.traverse(function(child) {
 				if (child instanceof THREE.Mesh){
-					child.material = metal_mat;
+					child.material = mat;
 				}
-				object_fan_base.geometry.uvsNeedUpdate = true;
-				object_fan_base.needsUpdate = true;
+				object.geometry.uvsNeedUpdate = true;
+				object.needsUpdate = true;
 			});
-		});
+		}
 
 		init();
 		animate();
@@ -308,11 +350,12 @@
 			const container = document.getElementById('container-3d')
 			//document.body.appendChild( container );
 
-			camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 20 );
-			camera.position.set( - 0.75, 0.7, 1.25 );
+			camera = new THREE.PerspectiveCamera( 20, container.clientWidth / container.offsetHeight, 0.1, 20 );
+			camera.position.set(1.97, -0.88, 1.95);
 
 			scene = new THREE.Scene();
 
+			
 			// model
 			var src = 'fan/fan.glb';
 			//var src = 'chair/chair.glb';
@@ -325,13 +368,16 @@
 					scene.add( gltf.scene );
 
 					object_blades = gltf.scene.getObjectByName( 'blade-cover' );
-					console.log(object_blades);
 					object_fan_base = gltf.scene.getObjectByName( 'fan-base' );
+
+					objects['body'] = object_fan_base;
+					objects['blades'] = object_blades;
 					const gui = new GUI();
 
 					gui.open();
 
 				} );
+
 
 			renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
 			renderer.setClearColor( 0x000000, 0 );
@@ -371,7 +417,7 @@
 		}
 
 		function render() {
-
+			//console.log(camera.position);
 			renderer.render( scene, camera );
 
 		}

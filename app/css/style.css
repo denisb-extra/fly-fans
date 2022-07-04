@@ -70,7 +70,7 @@ section {
       padding: 35px 0; } }
 
 .section-inner {
-  max-width: 1560px;
+  max-width: 1600px;
   padding: 0 20px;
   width: 100%;
   margin: auto;
@@ -90,8 +90,6 @@ section {
   .content ul {
     list-style: disc;
     padding-right: 25px; }
-  .content.white {
-    color: #fff; }
   .content img {
     max-width: 100%; }
 
@@ -134,16 +132,17 @@ section {
 .section-subtitle {
   font-family: 'heebo-regular';
   font-weight: 400;
-  font-size: 18px;
-  color: #252A39;
-  text-align: center;
-  margin-top: 10px; }
-  @media only screen and (max-width: 1200px) {
-    .section-subtitle {
-      font-size: 18px; } }
-  @media only screen and (max-width: 950px) {
-    .section-subtitle {
-      font-size: 16px; } }
+  font-size: 17px;
+  color: #000; }
+
+.title-regular {
+  font-family: 'heebo-regular';
+  font-weight: 400;
+  font-size: 36px;
+  color: #000; }
+
+.white {
+  color: #fff; }
 
 .loading:after {
   display: inline-block;
@@ -494,10 +493,58 @@ section.about-index {
 /* --------------------- /Section about-index ---------------------- */
 /* ---------------------- Section visual-3d ---------------------- */
 section.visual-3d {
-  background: linear-gradient(45deg, #2d3039 0%, #0f1015 100%); }
+  background: linear-gradient(45deg, #2d3039 0%, #0f1015 100%);
+  text-align: center; }
+  section.visual-3d .wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 45px;
+    text-align: right; }
+    section.visual-3d .wrapper .part.visual {
+      flex-grow: 1; }
+    section.visual-3d .wrapper .part.advantages {
+      padding-left: 50px;
+      margin-left: 50px;
+      border-left: 1px solid #fff;
+      flex-shrink: 0; }
+    section.visual-3d .wrapper .part.selectors {
+      padding-right: 20px;
+      margin-right: 20px;
+      flex-shrink: 0; }
+  section.visual-3d .advantages .items .item {
+    font-family: 'heebo-light';
+    font-weight: 300;
+    font-size: 21px;
+    color: #fff;
+    margin-top: 15px;
+    padding-right: 25px;
+    background: url("../images/icons/wifi.svg") no-repeat;
+    background-position: right top; }
+  section.visual-3d .selectors .selector {
+    display: flex;
+    margin-top: 15px; }
+    section.visual-3d .selectors .selector:first-child {
+      margin-top: 0; }
+    section.visual-3d .selectors .selector .title {
+      font-family: 'heebo-regular';
+      font-weight: 400;
+      font-size: 21px;
+      color: #fff;
+      width: 150px;
+      margin-left: 20px; }
+    section.visual-3d .selectors .selector .buttons {
+      display: flex;
+      align-items: center; }
+      section.visual-3d .selectors .selector .buttons .button {
+        width: 21px;
+        height: 21px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 100%;
+        margin: 0 7px;
+        cursor: pointer; }
   section.visual-3d .container-3d {
-    height: 500px;
-    width: 800px; }
+    height: 350px;
+    width: 100%; }
 
 /* --------------------- /Section visual-3d ---------------------- */
 /* ---------------------- footer ---------------------- */
