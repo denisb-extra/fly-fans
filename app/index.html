@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico' />
+	<title>Fly Fans</title>
+
+	<link rel="stylesheet" href="fonts/font-awesome.min.css">
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<link rel="stylesheet" href="plugins/swiper/swiper.css">
+	<script src="plugins/swiper/swiper.js"></script> 
+	
+	<link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.css">
+	<script src="plugins/fancybox/jquery.fancybox.js"></script> 
+	
+	<script src="plugins/scrollreveal/scrollreveal.js"></script> 
+	
+	<script src="plugins/mmenu/jquery-simple-mobilemenu.js"></script>
+	<link rel="stylesheet" href="plugins/mmenu/styles/jquery-simple-mobilemenu-slide.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<div class="header-inner">       
+			<div class="ham-button"></div>                                  
+			<div class="menu-cont">
+				<ul class="main-menu">
+					<li class="current_page_item"><a href="">עמוד בית</a></li>
+					<li><a href="">קטלוג מוצרים</a></li>
+					<li class="menu-item-has-children">
+						<a href="">הפרויקטים שלנו</a>
+						<ul class="sub-menu">
+							<li class="menu-item"><a href="#">גבעה TV</a></li>
+							<li class="menu-item menu-item-has-children">
+								<a href="#">הגבעה בתקשורת</a>
+								<ul class="sub-menu">
+									<li class="menu-item"><a href="#">מימוש זכויות רפואיות</a></li>
+									<li class="menu-item"><a href="#">פתרונות פיננסיים</a></li>
+									<li class="menu-item"><a href="#">ביטוח אמבולטורי</a></li>
+								</ul>
+							</li>
+							<li class="menu-item"><a href="#">בלוגבעה</a></li>
+							<li class="menu-item"><a href="#">מזגין גבעת אלונים</a></li>
+						</ul>
+					</li>
+					<li><a href="">אדריכלים</a></li>
+					<li><a href="">עסקים</a></li>
+					<li><a href="">צור קשר</a></li>
+				</ul>
+			</div>
+
+			<div class="mobile-menu-cont">
+				<ul class="mobile_menu">
+					<li class="current_page_item"><a href="">בית</a></li>
+					<li><a href="">אודות</a></li>
+					<li class="menu-item-has-children">
+						<a href="">הפרויקטים שלנו</a>
+						<ul class="sub-menu">
+							<li class="menu-item"><a href="#">מימוש זכויות רפואיות</a></li>
+							<li class="menu-item"><a href="#">פתרונות פיננסיים</a></li>
+							<li class="menu-item menu-item-has-children">
+								<a href="#">ביטוח אמבולטורי</a>
+								<ul class="sub-menu">
+									<li class="menu-item"><a href="#">מימוש זכויות רפואיות</a></li>
+									<li class="menu-item"><a href="#">פתרונות פיננסיים</a></li>
+									<li class="menu-item"><a href="#">ביטוח אמבולטורי</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="">ביטוח לאנשי קבע</a></li>
+					<li><a href=""> פספורטקארד</a></li>
+					<li><a href="">בלוג</a></li>
+					<li><a href="">יצירת קשר</a></li>
+				</ul>
+			</div>
+
+			<div class="icons">
+				<div class="icon">
+					<img src="images/icons/header/cart.svg">
+				</div>
+				<div class="icon">
+					<img src="images/icons/header/heart.svg">
+				</div>
+				<div class="icon">
+					<img src="images/icons/header/profile.svg">
+				</div>
+				<div class="icon">
+					<img src="images/icons/header/search.svg">
+				</div>
+			</div>
+
+			<div class="contacts">
+				<div class="text">
+					<p class="line-1">חייגו אלינו:</p>
+					<p class="line-2">03-0000000</p>
+				</div>
+			</div>
+			<a class="logo-cont" href="#">
+				<img src="images/index/logo.png" alt="">
+			</a>
+		</div>
+	</header>
+
+	<section class="slider-top">
+		<div class="bg">
+			<img src="images/index/bg-top.png">
+		</div>
+	</section>
+
+	<section class="about-index">
+		<div class="section-inner">
+			<div class="content white">
+				<p>B2B חברת אביטל עוסקת ביבוא ושיווק ציוד חשמל לתעשייה ותאורת לד טכנית
+					הוקמה למטרת יבוא ושיווק מאווררים מעוצבים: מאוורר רצפתי, קיר, שולחני ודגש על תקרתי FLY
+					אולם תצוגה מרכזי שמוקם בימים אלה בחולון ובהמשך ייתכן גם בנקודות משנה ברחבי הארץ </p>
+			</div>
+
+			<div class="btn-more">קרא עוד</div>
+		</div>
+	</section>
+
+	<section class="visual-3d">
+		<div class="section-inner">
+			<p class="section-title white centered">מאווררים Custome Made</p>
+			<div class="container-3d" id="container-3d"></div>
+			<div class="buttons">
+				<div class="button" id="texture-wood">Wood</div>
+				<div class="button" id="texture-metal">Metal</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div class="part-top">
+			<div class="section-inner">
+				<div class="cols">
+					<div class="col">
+						<p class="title">קטגריית מוצרים</p>
+						<div class="content">
+							<div class="menu-cont">
+								<ul class="menu">
+									<li><a href="">עמוד הבית</a></li>
+									<li><a href="">אודות</a></li>
+									<li><a href="">קטלוג</a></li>
+									<li><a href="">תווי תקן</a></li>
+									<li><a href="">תווי תקן</a></li>
+									<li><a href="">בלוג</a></li>
+									<li><a href="">יצירת קשר</a></li>
+									<li><a href="">עמוד הבית</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<p class="title">מפת האתר</p>
+						<div class="content">
+							<div class="menu-cont">
+								<ul class="menu">
+									<li><a href="">עמוד הבית</a></li>
+									<li><a href="">אודות</a></li>
+									<li><a href="">קטלוג</a></li>
+									<li><a href="">תווי תקן</a></li>
+									<li><a href="">בלוג</a></li>
+									<li><a href="">יצירת קשר</a></li>
+									<li><a href="">אודות</a></li>
+									<li><a href="">קטלוג</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<p class="title">קטגריית מוצרים</p>
+						<div class="content">
+							<div class="menu-cont">
+								<ul class="menu">
+									<li><a href="">עמוד הבית</a></li>
+									<li><a href="">אודות</a></li>
+									<li><a href="">קטלוג</a></li>
+									<li><a href="">תווי תקן</a></li>
+									<li><a href="">תווי תקן</a></li>
+									<li><a href="">בלוג</a></li>
+									<li><a href="">יצירת קשר</a></li>
+									<li><a href="">עמוד הבית</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>	
+
+				<div class="cols special">
+					<div class="col">
+						<p class="title">קטגריית מוצרים</p>
+						<div class="content">
+							<p>טלפון: 03-0000000</p>
+							<p>וואטסאפ: 050-0000000</p>
+							<p>fly@gmail.com :מייל </p>
+							<p>כתובת: המצודה 29, אזור</p>
+							<p><br></p>
+							<p><strong>שעות פעילות</strong></p>
+							<p>א-ה: 8:00-17:00</p>
+						</div>
+					</div>
+
+					<div class="col">
+						<p class="title">קטגריית מוצרים</p>
+						<div class="content">
+							<p>טלפון: 03-0000000</p>
+							<p>וואטסאפ: 050-0000000</p>
+							<p>fly@gmail.com :מייל </p>
+							<p>כתובת: המצודה 29, אזור</p>
+							<p><br></p>
+							<p><strong>שעות פעילות</strong></p>
+							<p>א-ה: 8:00-17:00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="part-bottom">
+			<div class="section-inner">
+				<p class="copy">© Fly כל הזכויות שמורות ל </p>
+				<div class="sep">|</div>
+				<p class="credit">
+					<span>עיצוב ובניית אתר ע״י </span>
+					<img src="images/logoextra.png" alt="">
+					<span>דיגיטל</span>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Import maps polyfill -->
+	<!-- Remove this when import maps will be widely supported -->
+	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+	<script type="importmap">
+		{
+			"imports": {
+				"three": "../plugins/threejs/build/three.module.js"
+			}
+		}
+	</script>
+
+	<script type="module">
+
+		import * as THREE from 'three';
+
+		import { OrbitControls } from './plugins/threejs/jsm/controls/OrbitControls.js';
+		import { GLTFLoader } from './plugins/threejs/jsm/loaders/GLTFLoader.js';
+		import { RoomEnvironment } from './plugins/threejs/jsm/environments/RoomEnvironment.js';
+
+		import { GUI } from './plugins/threejs/jsm/libs/lil-gui.module.min.js';
+
+		let camera, scene, renderer, controls;
+
+		let object_blades, object_fan_base;
+
+		let wood_tex = new THREE.TextureLoader().load('3d/models/fan/textures/21246a8b4c20.jpg');
+		let wood_mat = new THREE.MeshBasicMaterial({
+			map: wood_tex,
+			roughness: 0.5,
+    		metalness: 1,
+		}); 
+
+		let env_tex = new THREE.TextureLoader().load('3d/models/fan/textures/HDM_06_001_rim_ref.jpg');
+		let metal_tex = new THREE.TextureLoader().load('3d/models/fan/textures/d2e611dca1c6.jpg');
+		let metal_mat = new THREE.MeshBasicMaterial({
+			map: metal_tex
+		}); 
+
+		
+
+
+		
+		document.getElementById('texture-wood').addEventListener("click", function(){
+			object_blades.traverse(function(child) {
+				if (child instanceof THREE.Mesh){
+					child.material = wood_mat;
+				}
+				object_blades.geometry.uvsNeedUpdate = true;
+				object_blades.needsUpdate=true;
+			});
+		});
+
+		document.getElementById('texture-metal').addEventListener("click", function(){
+			object_fan_base.traverse(function(child) {
+				if (child instanceof THREE.Mesh){
+					child.material = metal_mat;
+				}
+				object_fan_base.geometry.uvsNeedUpdate = true;
+				object_fan_base.needsUpdate = true;
+			});
+		});
+
+		init();
+		animate();
+
+		function init() {
+
+			//const container = document.createElement( 'div' );
+			const container = document.getElementById('container-3d')
+			//document.body.appendChild( container );
+
+			camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 20 );
+			camera.position.set( - 0.75, 0.7, 1.25 );
+
+			scene = new THREE.Scene();
+
+			// model
+			var src = 'fan/fan.glb';
+			//var src = 'chair/chair.glb';
+			new GLTFLoader()
+				//.setPath( 'plugins/threejs-new/examples/models/gltf/' )
+				//.load( 'SheenChair.glb', function ( gltf ) {
+				
+				.setPath( '3d/models/' )
+				.load( src, function ( gltf ) {
+					scene.add( gltf.scene );
+
+					object_blades = gltf.scene.getObjectByName( 'blade-cover' );
+					console.log(object_blades);
+					object_fan_base = gltf.scene.getObjectByName( 'fan-base' );
+					const gui = new GUI();
+
+					gui.open();
+
+				} );
+
+			renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+			renderer.setClearColor( 0x000000, 0 );
+			renderer.setPixelRatio( window.devicePixelRatio );
+			renderer.setSize(container.clientWidth, container.offsetHeight);
+			//renderer.toneMapping = THREE.ACESFilmicToneMapping;
+			renderer.toneMappingExposure = 1;
+			renderer.outputEncoding = THREE.sRGBEncoding;
+			container.appendChild( renderer.domElement );
+
+			const environment = new RoomEnvironment();
+			const pmremGenerator = new THREE.PMREMGenerator( renderer );
+
+			//scene.background = new THREE.Color( 0xbbbbbb );
+			scene.environment = pmremGenerator.fromScene( environment ).texture;
+
+			controls = new OrbitControls( camera, renderer.domElement );
+			controls.enableDamping = true;
+			controls.minDistance = 1;
+			controls.maxDistance = 10;
+			controls.target.set( 0, 0.35, 0 );
+			controls.update();
+		}
+
+
+
+		//
+
+		function animate() {
+			if(object_blades) object_blades.rotation.y += 0.01;
+			requestAnimationFrame( animate );
+
+			controls.update(); // required if damping enabled
+
+			render();
+
+		}
+
+		function render() {
+
+			renderer.render( scene, camera );
+
+		}
+
+	</script>
+</body>
+</html>
