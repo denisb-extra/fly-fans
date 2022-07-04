@@ -146,7 +146,7 @@
 					<div class="selector">
 						<p class="title">בחר צבע גוף:</p>
 						<div class="buttons">
-							<div class="button" material="white" target="body" style="background-color: #fff;"></div>
+							<div class="button active" material="white" target="body" style="background-color: #fff;"></div>
 							<div class="button" material="black" target="body" style="background-color: #000;"></div>
 							<div class="button" material="metal" target="body" style="background-color: #A09C9D;"></div>
 						</div>
@@ -155,7 +155,7 @@
 					<div class="selector">
 						<p class="title">בחר צבע להבים:</p>
 						<div class="buttons">
-							<div class="button" material="white" target="blades" style="background-color: #fff;"></div>
+							<div class="button active" material="white" target="blades" style="background-color: #fff;"></div>
 							<div class="button" material="black" target="blades" style="background-color: #000;"></div>
 							<div class="button" material="wood" target="blades" style="background-color: #A28966;"></div>
 						</div>
@@ -302,17 +302,19 @@
 		let materials = [];
 		let wood_tex = new THREE.TextureLoader().load('3d/models/fan/textures/21246a8b4c20.jpg');
 		let metal_tex = new THREE.TextureLoader().load('3d/models/fan/textures/d2e611dca1c6.jpg');
-		materials['wood'] = new THREE.MeshBasicMaterial({
+		materials['wood'] = new THREE.MeshStandardMaterial({
 			map: wood_tex,
 		}); 
-		materials['metal'] = new THREE.MeshBasicMaterial({
+		materials['metal'] = new THREE.MeshStandardMaterial({
 			map: metal_tex,
+			roughness: 0.5,
+     		metalness: 1,
 		}); 
 
-		materials['white'] = new THREE.MeshBasicMaterial({
+		materials['white'] = new THREE.MeshStandardMaterial({
 			color: 0xffffff
 		}); 
-		materials['black'] = new THREE.MeshBasicMaterial({
+		materials['black'] = new THREE.MeshStandardMaterial({
 			color: 0x000000
 		}); 
 
@@ -330,8 +332,6 @@
 		function setMaterial(target, material) {
 			let object = objects[target];
 			let mat = materials[material];
-			console.log(object)
-			console.log(mat)
 			object.traverse(function(child) {
 				if (child instanceof THREE.Mesh){
 					child.material = mat;
@@ -339,6 +339,7 @@
 				object.geometry.uvsNeedUpdate = true;
 				object.needsUpdate = true;
 			});
+		
 		}
 
 		init();
@@ -370,6 +371,7 @@
 					object_blades = gltf.scene.getObjectByName( 'blade-cover' );
 					object_fan_base = gltf.scene.getObjectByName( 'fan-base' );
 
+					console.log(object_fan_base);
 					objects['body'] = object_fan_base;
 					objects['blades'] = object_blades;
 					const gui = new GUI();
@@ -407,7 +409,7 @@
 		//
 
 		function animate() {
-			if(object_blades) object_blades.rotation.y += 0.01;
+			if(object_blades) object_blades.rotation.y += 0.02;
 			requestAnimationFrame( animate );
 
 			controls.update(); // required if damping enabled
