@@ -389,11 +389,237 @@ section.about-index {
 }
 /* --------------------- /Section about-index ---------------------- */
 
+/* ---------------------- Section special ---------------------- */
+section.special {
+    overflow: visible;
+    .parts {
+        .part {
+            &.part-slider {
+                width: 45%;
+            }
+            &.part-info {
+                width: 55%;
+            }
+
+        }
+    }
+    .items {
+        .item {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            @include f-l;
+            font-size: 18px;
+            color: #000;
+            strong {
+                @include f-m;
+            }
+            .icon {
+                text-align: center;
+                width: 45px;
+                margin-left: 10px;
+                @include flex-center;
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .swiper-container {
+        overflow: visible;
+        direction: ltr;
+        * {
+            direction: ltr;
+        }
+        position: relative;
+
+        .swiper-pagination {
+            left: 70px;
+            bottom: -40px;
+            display: flex;
+            justify-content: flex-start;
+            .swiper-pagination-bullet {
+                height: 10px;
+                width: 10px;
+                margin: 5px;
+                border: 1px solid #22988A;
+                background: #fff;
+                opacity: 1;
+                transition: background 0.5s;
+                &.swiper-pagination-bullet-active {
+                    background: #22988A;
+                }
+            }
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            width: 1500px;
+            right: 100%;
+            background-color: #fff;
+            z-index: 2;
+        }
+        .swiper-wrapper {
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            .swiper-slide {
+                text-align: center;
+                font-size: 0;
+                .image {
+                    overflow: hidden;
+                    height: 260px;
+                    transition: height 0.5s;
+                    border-radius: 15px;
+                    display: inline-block;
+                    width: auto;
+                    margin: auto;
+                    //@include flex-center;
+                    transition: 0.5s;
+                    img {
+                        height: 100%;
+                    }
+                }
+                
+                &.swiper-slide-next {
+                    z-index: 2;
+                    .image {
+                        transform: scale(2.2);
+                    }
+                }
+                &.swiper-slide-active {
+                    z-index: 9;
+                    .image {
+                        transition: none;
+                        transform: scale(2.2);
+                        animation: scale-slide 1s forwards;
+                    }
+                }
+            }
+        }
+    }
+
+    .part-info {
+        position: relative;
+        z-index: 2;
+    }
+}
+/* --------------------- /Section special ---------------------- */
+
+@keyframes scale-slide {
+    0%   {transform: scale(2.2)}
+    100% {transform: scale(1)}
+}
+
+
+/* ---------------------- Section application ---------------------- */
+section.application {
+    padding-bottom: 0;
+    margin-bottom: -90px;
+    z-index: 9;
+    .selections {
+        margin-top: 35px;
+        .items {
+            position: relative;
+            .track {
+                position: absolute;
+                right: 11px;
+                top: 5px;
+                bottom: 0;
+                width: 13px;
+                z-index: 1;
+                .inactive {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 100%;
+                    background: #D5D5D5;
+                }
+
+                .active {
+                    position: absolute;
+                    top: 0;
+                    bottom: 100%;
+                    width: 100%;
+                    background: #239C8D;
+                    z-index: 2;
+                    transition: 0.5s;
+                }
+            }
+        }
+        .item {
+            display: flex;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+            .icon {
+                border: 2px solid #D5D5D5;
+                background: #fff;
+                width: 35px;
+                height: 35px;
+                border-radius: 100%;
+                @include flex-center;
+                flex-shrink: 0;
+                margin-left: 20px;
+            }
+            .title {
+                @include f-m;
+                font-size: 18px;
+                color: #000;
+            }
+            .desc {
+                @include f-l;
+                font-size: 18px;
+                color: #000;
+            }
+        }
+    }
+
+    .part-visual {
+        display: flex;
+        align-items: flex-end;
+        background: url("../images/index/application/wifi.png") no-repeat;
+        background-position: left top;
+        .image {
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .buttons {
+            margin-bottom: 130px;
+            margin-right: 70px;
+            .button {
+                display: block;
+            }
+        }
+    }
+}
+/* --------------------- /Section application ---------------------- */
+
 
 /* ---------------------- Section visual-3d ---------------------- */
 section.visual-3d {
-    background: linear-gradient(45deg, #2d3039 0%, #0f1015 100%);
+    padding-top: 140px;
     text-align: center;
+    .section-inner {
+        
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 100px;
+        background: linear-gradient(45deg, #2d3039 0%, #0f1015 100%);
+        border-radius: 50px 0px 0px 50px;
+    }
     .wrapper {
         display: flex;
         align-items: center;
@@ -449,16 +675,40 @@ section.visual-3d {
             .buttons {
                 display: flex;
                 align-items: center;
+                position: relative;
+                z-index: 1;
                 .button {
-                    width: 21px;
-                    height: 21px;
-                    border: 2px solid rgba(255,255,255,0.5);
+                    width: 22px;
+                    height: 22px;
+                    border: 1px solid rgba(255,255,255,0.5);
                     border-radius: 100%;
                     margin: 0 7px;
                     cursor: pointer;
-                    transition: 0.5s;
+                    
+                    position: relative;
+                    border-radius: 100%;
+                    font-size: 0;
+                    
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%) scale(0.7);
+                        display: block;
+                        width: 28px;
+                        height: 28px;
+                        background-color: #239B8C;
+                        z-index: -1;
+                        border-radius: 100%;
+                        transition: 0.5s;
+                        opacity: 0;
+                    }
                     &.active {
-                        border: 2px solid #239B8C;
+                        &:before {
+                            transform: translateX(-50%) translateY(-50%) scale(1);
+                            opacity: 1;
+                        }
                     }
                 }
             }
@@ -473,7 +723,60 @@ section.visual-3d {
 }
 /* --------------------- /Section visual-3d ---------------------- */
 
+.switch {
+    border-radius: 15px;
+    background: #239c8d;
+    display: flex;
+    padding: 0 3px;
+    position: relative;
+    cursor: pointer;
+    .item {
+        @include f-r;
+        font-size: 18px;
+        color: #fff;
+        padding: 3px 10px;
+        position: relative;
+        z-index: 2;
+        transition: 0.25s;
+    }
+    &.is-on {
+        .item.off {
+            color: #fff;
+        }
+        .item.on {
+            color: #262830;
+        }
+        &:after {
+            left: 45px;
+            right: 2px;
+        }
+    }
 
+    &.is-off {
+        .item.off {
+            color: #262830;
+        }
+        .item.on {
+            color: #fff;
+        }
+        &:after {
+            right: 45px;
+            left: 2px;
+        }
+    }
+
+    &:after {
+        content: "";
+        border-radius: 15px;
+        background: #fff;
+        position: absolute;
+        
+        right: 2px;
+        top: 2px;
+        bottom: 2px;
+        transition: 0.25s;
+    }
+}
 
 /* ---------------------- footer ---------------------- */
 footer {

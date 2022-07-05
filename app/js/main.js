@@ -16,6 +16,11 @@ $(document).ready(function ($) {
         "menuStyle": "slide",
     });
 
+    $(".switch").on("click", function(){
+        $(this).toggleClass("is-on");
+        $(this).toggleClass("is-off");
+    });
+
     document.addEventListener( 'wpcf7mailsent', function( event ) {
         var inputs = event.detail.inputs;
         thankyouPage = getFieldValueByName(inputs, "thankyou-page");
